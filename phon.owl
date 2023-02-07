@@ -1066,6 +1066,7 @@ For &apos;absolute&apos; locations, see SpaceRegion</rdfs:comment>
     <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place -->
 
     <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Location"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isLocationOf"/>
@@ -1136,6 +1137,8 @@ For &apos;absolute&apos; locations, see SpaceRegion</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Author">
         <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <rdfs:comment xml:lang="en">The author of a photograph.</rdfs:comment>
+        <rdfs:label xml:lang="en">Author</rdfs:label>
     </owl:Class>
     
 
@@ -1144,6 +1147,8 @@ For &apos;absolute&apos; locations, see SpaceRegion</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Camera">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Gear"/>
+        <rdfs:comment xml:lang="en">A camera model used to create photographs.</rdfs:comment>
+        <rdfs:label xml:lang="en">Camera</rdfs:label>
     </owl:Class>
     
 
@@ -1151,9 +1156,9 @@ For &apos;absolute&apos; locations, see SpaceRegion</rdfs:comment>
     <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#City -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#City">
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject"/>
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalPlace"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Location"/>
+        <rdfs:comment xml:lang="en">A city.</rdfs:comment>
+        <rdfs:label xml:lang="en">City</rdfs:label>
     </owl:Class>
     
 
@@ -1162,6 +1167,8 @@ For &apos;absolute&apos; locations, see SpaceRegion</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#DSLR">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#DigitalCamera"/>
+        <rdfs:comment xml:lang="en">A Digital SLR.</rdfs:comment>
+        <rdfs:label xml:lang="en">DSLR</rdfs:label>
     </owl:Class>
     
 
@@ -1170,6 +1177,8 @@ For &apos;absolute&apos; locations, see SpaceRegion</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#DigitalCamera">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Camera"/>
+        <rdfs:comment xml:lang="en">A digital camera.</rdfs:comment>
+        <rdfs:label xml:lang="en">Digital Camera</rdfs:label>
     </owl:Class>
     
 
@@ -1208,7 +1217,10 @@ For &apos;absolute&apos; locations, see SpaceRegion</rdfs:comment>
 
     <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Gear -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Gear"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Gear">
+        <rdfs:comment xml:lang="en">Gear used in the making of photographs.</rdfs:comment>
+        <rdfs:label xml:lang="en">Gear</rdfs:label>
+    </owl:Class>
     
 
 
@@ -1216,6 +1228,8 @@ For &apos;absolute&apos; locations, see SpaceRegion</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Genre">
         <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
+        <rdfs:comment xml:lang="en">The genre of a Photograph or a PhotoSeries.</rdfs:comment>
+        <rdfs:label xml:lang="en">Genre</rdfs:label>
     </owl:Class>
     
 
@@ -1224,6 +1238,8 @@ For &apos;absolute&apos; locations, see SpaceRegion</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#InstantCamera">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Camera"/>
+        <rdfs:comment xml:lang="en">An instant camera.</rdfs:comment>
+        <rdfs:label xml:lang="en">Instant Camera</rdfs:label>
     </owl:Class>
     
 
@@ -1232,6 +1248,8 @@ For &apos;absolute&apos; locations, see SpaceRegion</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Lens">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Gear"/>
+        <rdfs:comment xml:lang="en">A lens used with a camera body to make photographs.</rdfs:comment>
+        <rdfs:label xml:lang="en">Lens</rdfs:label>
     </owl:Class>
     
 
@@ -1239,8 +1257,9 @@ For &apos;absolute&apos; locations, see SpaceRegion</rdfs:comment>
     <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Location -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Location">
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject"/>
         <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalPlace"/>
+        <rdfs:comment xml:lang="en">The location where a photo what taken.</rdfs:comment>
+        <rdfs:label xml:lang="en">Location</rdfs:label>
     </owl:Class>
     
 
@@ -1249,6 +1268,8 @@ For &apos;absolute&apos; locations, see SpaceRegion</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Mirrorless">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#DigitalCamera"/>
+        <rdfs:comment xml:lang="en">A mirrorless camera body.</rdfs:comment>
+        <rdfs:label xml:lang="en">Mirrorless</rdfs:label>
     </owl:Class>
     
 
@@ -1264,9 +1285,9 @@ For &apos;absolute&apos; locations, see SpaceRegion</rdfs:comment>
     <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Nation -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Nation">
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject"/>
-        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalPlace"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Location"/>
+        <rdfs:comment xml:lang="en">A nation.</rdfs:comment>
+        <rdfs:label xml:lang="en">Nation</rdfs:label>
     </owl:Class>
     
 
@@ -1275,6 +1296,8 @@ For &apos;absolute&apos; locations, see SpaceRegion</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#PhoneCamera">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#DigitalCamera"/>
+        <rdfs:comment xml:lang="en">A phone camera.</rdfs:comment>
+        <rdfs:label xml:lang="en">Phone Camera</rdfs:label>
     </owl:Class>
     
 
@@ -1302,6 +1325,8 @@ For &apos;absolute&apos; locations, see SpaceRegion</rdfs:comment>
         <rdfs:subClassOf rdf:resource="http://purl.org/spar/fabio/Series"/>
         <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#List"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#SeriesItem"/>
+        <rdfs:comment xml:lang="en">A collection of photograph&apos;s list items.</rdfs:comment>
+        <rdfs:label xml:lang="en">Photo Series</rdfs:label>
     </owl:Class>
     
 
@@ -1326,6 +1351,8 @@ For &apos;absolute&apos; locations, see SpaceRegion</rdfs:comment>
                 </owl:oneOf>
             </owl:Class>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A medium that stores photographs.</rdfs:comment>
+        <rdfs:label xml:lang="en">Photographic Medium</rdfs:label>
     </owl:Class>
     
 
@@ -1341,6 +1368,8 @@ For &apos;absolute&apos; locations, see SpaceRegion</rdfs:comment>
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Camera"/>
+        <rdfs:comment xml:lang="en">A camera body used to make many different photos.</rdfs:comment>
+        <rdfs:label xml:lang="en">Popolar Camera</rdfs:label>
     </owl:Class>
     
 
@@ -1349,6 +1378,8 @@ For &apos;absolute&apos; locations, see SpaceRegion</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#SLR">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Camera"/>
+        <rdfs:comment xml:lang="en">An analogic camera body.</rdfs:comment>
+        <rdfs:label xml:lang="en">SLR</rdfs:label>
     </owl:Class>
     
 
@@ -1365,6 +1396,8 @@ For &apos;absolute&apos; locations, see SpaceRegion</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Subject">
         <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <rdfs:comment xml:lang="en">The subject of a photograph.</rdfs:comment>
+        <rdfs:label xml:lang="en">Subject</rdfs:label>
     </owl:Class>
     
 
@@ -1881,10 +1914,10 @@ For &apos;absolute&apos; locations, see SpaceRegion</rdfs:comment>
         <rdfs:label xml:lang="en">Film</rdfs:label>
     </owl:NamedIndividual>
     <rdf:Description>
-        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">5</owl:minQualifiedCardinality>
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:maxQualifiedCardinality>
     </rdf:Description>
     <rdf:Description>
-        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:maxQualifiedCardinality>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">5</owl:minQualifiedCardinality>
     </rdf:Description>
     
 
