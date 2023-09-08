@@ -1,0 +1,796 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/dnbias/ontologies/2023/8/phon-inferred-2#"
+     xml:base="http://www.semanticweb.org/dnbias/ontologies/2023/8/phon-inferred-2"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/8/phon-inferred-2"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/spar/fabio/isStoredOn -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/spar/fabio/isStoredOn"/>
+    
+
+
+    <!-- http://purl.org/spar/fabio/stores -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/spar/fabio/stores"/>
+    
+
+
+    <!-- http://purl.org/vocab/frbr/core#partOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/vocab/frbr/core#partOf"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/list.owl#firstItemOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/cp/owl/list.owl#firstItemOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/list.owl#hasFirstItem -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/cp/owl/list.owl#hasFirstItem">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/list.owl#hasLastItem -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/cp/owl/list.owl#hasLastItem">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/list.owl#lastItemOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/cp/owl/list.owl#lastItemOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/list.owl#nextItem -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/cp/owl/list.owl#nextItem">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyFollows"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/list.owl#previousItem -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/cp/owl/list.owl#previousItem">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyPrecedes"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyFollows -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyFollows">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#follows"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyPrecedes -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyPrecedes">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#precedes"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#follows -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#follows"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#precedes -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#precedes"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasLocation -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasLocation">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isAgentInvolvedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isAgentInvolvedIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isParticipantIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isLocationOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isLocationOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isParticipantIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isParticipantIn"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#realizes -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#realizes">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#author -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#author">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#camera -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#camera">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#shotWith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#containsPhoto -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#containsPhoto">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#genre -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#genre">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#hasPhoto -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#hasPhoto">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#isGenreOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#isGenreOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#isLocation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#isLocation">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isLocationOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#isSubjectOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#isSubjectOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#lens -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#lens">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#shotWith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#location -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#location">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasLocation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#medium -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#medium">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/spar/fabio/isStoredOn"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#shotWith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#nextInSeries -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#nextInSeries">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#nextItem"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#differentFrom"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#previousInSeries -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#previousInSeries">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#previousItem"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#differentFrom"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#shot -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#shot">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#shotBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#shotBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#author"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#shotWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#shotWith"/>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#storesPhoto -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#storesPhoto">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/spar/fabio/stores"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#usedToShoot"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#subject -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#subject">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#usedToShoot -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#usedToShoot"/>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/photOntology#inSeries -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/photOntology#inSeries">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/core#partOf"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#differentFrom -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2002/07/owl#differentFrom"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#date -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#date">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/created"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#name">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#title"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/title"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#title -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#title">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/title"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#year -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#year">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/created"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/spar/fabio/Series -->
+
+    <owl:Class rdf:about="http://purl.org/spar/fabio/Series"/>
+    
+
+
+    <!-- http://purl.org/spar/fabio/StillImage -->
+
+    <owl:Class rdf:about="http://purl.org/spar/fabio/StillImage"/>
+    
+
+
+    <!-- http://purl.org/spar/fabio/StorageMedium -->
+
+    <owl:Class rdf:about="http://purl.org/spar/fabio/StorageMedium"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/list.owl#List -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/cp/owl/list.owl#List">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationEntity -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationEntity"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationEntity"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Person -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Person">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalAgent -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalAgent">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalPlace -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalPlace">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Location"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalPlace"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialAgent -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialAgent">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObject -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObject"/>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#AnalogicPhoto -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#AnalogicPhoto">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Photo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#AntiquePhoto -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#AntiquePhoto">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Photo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Author -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Author">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Camera -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Camera">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Gear"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#City -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#City">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#DSLR -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#DSLR">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#DigitalCamera"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#DigitalCamera -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#DigitalCamera">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Camera"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#DigitalPhoto -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#DigitalPhoto">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Photo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Gear -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Gear"/>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Genre -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Genre">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#InstantCamera -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#InstantCamera">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Camera"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Lens -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Lens">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Gear"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Location -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Location">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalPlace"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#LongSeries -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#LongSeries">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#PhotoSeries"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Mirrorless -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Mirrorless">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#DigitalCamera"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#ModernPhoto -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#ModernPhoto">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Photo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Nation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Nation">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#PhoneCamera -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#PhoneCamera">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#DigitalCamera"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Photo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Photo">
+        <rdfs:subClassOf rdf:resource="http://purl.org/spar/fabio/StillImage"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#PhotoSeries -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#PhotoSeries">
+        <rdfs:subClassOf rdf:resource="http://purl.org/spar/fabio/Series"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#List"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#PhotographicMedium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#PhotographicMedium">
+        <rdfs:subClassOf rdf:resource="http://purl.org/spar/fabio/StorageMedium"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#PopularCamera -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#PopularCamera">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Camera"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Portrait -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Portrait">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Photo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#SLR -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#SLR">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Camera"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#SeriesItem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#SeriesItem">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#ShortSeries -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#ShortSeries">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#PhotoSeries"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Subject -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Subject">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
