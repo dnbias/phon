@@ -1,0 +1,502 @@
+@prefix : <http://www.semanticweb.org/dnbias/ontologies/2023/8/phon-inferred#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/dnbias/ontologies/2023/8/phon-inferred> .
+
+<http://www.semanticweb.org/dnbias/ontologies/2023/8/phon-inferred> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/spar/fabio/isStoredOn
+<http://purl.org/spar/fabio/isStoredOn> rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/spar/fabio/stores
+<http://purl.org/spar/fabio/stores> rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/vocab/frbr/core#partOf
+<http://purl.org/vocab/frbr/core#partOf> rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem
+<http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem> rdf:type owl:ObjectProperty ;
+                                                               rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember> .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent
+<http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf
+<http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf> rdf:type owl:ObjectProperty ;
+                                                              rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf> .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember
+<http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember> rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf
+<http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf> rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/list.owl#firstItemOf
+<http://www.ontologydesignpatterns.org/cp/owl/list.owl#firstItemOf> rdf:type owl:ObjectProperty ;
+                                                                    rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf> .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/list.owl#hasFirstItem
+<http://www.ontologydesignpatterns.org/cp/owl/list.owl#hasFirstItem> rdf:type owl:ObjectProperty ;
+                                                                     rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem> .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/list.owl#hasLastItem
+<http://www.ontologydesignpatterns.org/cp/owl/list.owl#hasLastItem> rdf:type owl:ObjectProperty ;
+                                                                    rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem> .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/list.owl#lastItemOf
+<http://www.ontologydesignpatterns.org/cp/owl/list.owl#lastItemOf> rdf:type owl:ObjectProperty ;
+                                                                   rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf> .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/list.owl#nextItem
+<http://www.ontologydesignpatterns.org/cp/owl/list.owl#nextItem> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyFollows> .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/list.owl#previousItem
+<http://www.ontologydesignpatterns.org/cp/owl/list.owl#previousItem> rdf:type owl:ObjectProperty ;
+                                                                     rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyPrecedes> .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyFollows
+<http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyFollows> rdf:type owl:ObjectProperty ;
+                                                                            rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#follows> .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyPrecedes
+<http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyPrecedes> rdf:type owl:ObjectProperty ;
+                                                                             rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#precedes> .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#follows
+<http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#follows> rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#precedes
+<http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#precedes> rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith> rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasLocation
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasLocation> rdf:type owl:ObjectProperty ;
+                                                                    rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith> .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isAgentInvolvedIn
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isAgentInvolvedIn> rdf:type owl:ObjectProperty ;
+                                                                          rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isParticipantIn> .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isLocationOf
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isLocationOf> rdf:type owl:ObjectProperty ;
+                                                                     rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith> .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isParticipantIn
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isParticipantIn> rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#realizes
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#realizes> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#author
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#author> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#camera
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#camera> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:subPropertyOf <http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#shotWith> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#containsPhoto
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#containsPhoto> rdf:type owl:ObjectProperty ;
+                                                                         rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#genre
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#genre> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#hasPhoto
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#hasPhoto> rdf:type owl:ObjectProperty ;
+                                                                    rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#isGenreOf
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#isGenreOf> rdf:type owl:ObjectProperty ;
+                                                                     rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#isLocation
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#isLocation> rdf:type owl:ObjectProperty ;
+                                                                      rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isLocationOf> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#isSubjectOf
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#isSubjectOf> rdf:type owl:ObjectProperty ;
+                                                                       rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#lens
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#lens> rdf:type owl:ObjectProperty ;
+                                                                rdfs:subPropertyOf <http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#shotWith> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#location
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#location> rdf:type owl:ObjectProperty ;
+                                                                    rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasLocation> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#medium
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#medium> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:subPropertyOf <http://purl.org/spar/fabio/isStoredOn> ,
+                                                                                     <http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#shotWith> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#nextInSeries
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#nextInSeries> rdf:type owl:ObjectProperty ;
+                                                                        rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/cp/owl/list.owl#nextItem> ,
+                                                                                           owl:differentFrom .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#previousInSeries
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#previousInSeries> rdf:type owl:ObjectProperty ;
+                                                                            rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/cp/owl/list.owl#previousItem> ,
+                                                                                               owl:differentFrom .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#shot
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#shot> rdf:type owl:ObjectProperty ;
+                                                                rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#shotBy
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#shotBy> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:subPropertyOf <http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#author> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#shotWith
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#shotWith> rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#storesPhoto
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#storesPhoto> rdf:type owl:ObjectProperty ;
+                                                                       rdfs:subPropertyOf <http://purl.org/spar/fabio/stores> ,
+                                                                                          <http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#usedToShoot> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#subject
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#subject> rdf:type owl:ObjectProperty ;
+                                                                   rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#usedToShoot
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#usedToShoot> rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/photOntology#inSeries
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/photOntology#inSeries> rdf:type owl:ObjectProperty ;
+                                                                            rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#partOf> ,
+                                                                                               <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf> .
+
+
+###  http://www.w3.org/2002/07/owl#differentFrom
+owl:differentFrom rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:DatatypeProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#date
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#date> rdf:type owl:DatatypeProperty ;
+                                                                rdfs:subPropertyOf <http://purl.org/dc/terms/created> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#name
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#name> rdf:type owl:DatatypeProperty ;
+                                                                owl:equivalentProperty <http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#title> ;
+                                                                rdfs:subPropertyOf <http://purl.org/dc/terms/title> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#title
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#title> rdf:type owl:DatatypeProperty ;
+                                                                 rdfs:subPropertyOf <http://purl.org/dc/terms/title> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#year
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#year> rdf:type owl:DatatypeProperty ;
+                                                                rdfs:subPropertyOf <http://purl.org/dc/terms/created> .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/spar/fabio/Series
+<http://purl.org/spar/fabio/Series> rdf:type owl:Class .
+
+
+###  http://purl.org/spar/fabio/StillImage
+<http://purl.org/spar/fabio/StillImage> rdf:type owl:Class .
+
+
+###  http://purl.org/spar/fabio/StorageMedium
+<http://purl.org/spar/fabio/StorageMedium> rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag
+<http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag> rdf:type owl:Class ;
+                                                           rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item
+<http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection
+<http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/list.owl#List
+<http://www.ontologydesignpatterns.org/cp/owl/list.owl#List> rdf:type owl:Class ;
+                                                             rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag> .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem
+<http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent> rdf:type owl:Class ;
+                                                              rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object> .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity> rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationEntity
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationEntity> rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject> rdf:type owl:Class ;
+                                                                          rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationEntity> ,
+                                                                                          <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObject> .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object> rdf:type owl:Class ;
+                                                               rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity> .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Person
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Person> rdf:type owl:Class ;
+                                                               rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent> .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalAgent
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalAgent> rdf:type owl:Class ;
+                                                                      rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent> .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject> rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalPlace
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalPlace> rdf:type owl:Class ;
+                                                                      rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject> .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place> rdf:type owl:Class ;
+                                                              owl:equivalentClass <http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Location> ;
+                                                              rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity> ,
+                                                                              <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalPlace> .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialAgent
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialAgent> rdf:type owl:Class ;
+                                                                    rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent> .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObject
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObject> rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#AnalogicPhoto
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#AnalogicPhoto> rdf:type owl:Class ;
+                                                                         rdfs:subClassOf <http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Photo> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#AntiquePhoto
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#AntiquePhoto> rdf:type owl:Class ;
+                                                                        rdfs:subClassOf <http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Photo> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Author
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Author> rdf:type owl:Class ;
+                                                                  rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Camera
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Camera> rdf:type owl:Class ;
+                                                                  rdfs:subClassOf <http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Gear> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#City
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#City> rdf:type owl:Class ;
+                                                                rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place> ,
+                                                                                <http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Location> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#DSLR
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#DSLR> rdf:type owl:Class ;
+                                                                rdfs:subClassOf <http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#DigitalCamera> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#DigitalCamera
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#DigitalCamera> rdf:type owl:Class ;
+                                                                         rdfs:subClassOf <http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Camera> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#DigitalPhoto
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#DigitalPhoto> rdf:type owl:Class ;
+                                                                        rdfs:subClassOf <http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Photo> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Gear
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Gear> rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Genre
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Genre> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#InstantCamera
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#InstantCamera> rdf:type owl:Class ;
+                                                                         rdfs:subClassOf <http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Camera> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Lens
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Lens> rdf:type owl:Class ;
+                                                                rdfs:subClassOf <http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Gear> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Location
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Location> rdf:type owl:Class ;
+                                                                    rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity> ,
+                                                                                    <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalPlace> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#LongSeries
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#LongSeries> rdf:type owl:Class ;
+                                                                      rdfs:subClassOf <http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#PhotoSeries> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Mirrorless
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Mirrorless> rdf:type owl:Class ;
+                                                                      rdfs:subClassOf <http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#DigitalCamera> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#ModernPhoto
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#ModernPhoto> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf <http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Photo> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Nation
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Nation> rdf:type owl:Class ;
+                                                                  rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place> ,
+                                                                                  <http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Location> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#PhoneCamera
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#PhoneCamera> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf <http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#DigitalCamera> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Photo
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Photo> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <http://purl.org/spar/fabio/StillImage> ,
+                                                                                 <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#PhotoSeries
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#PhotoSeries> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf <http://purl.org/spar/fabio/Series> ,
+                                                                                       <http://www.ontologydesignpatterns.org/cp/owl/list.owl#List> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#PhotographicMedium
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#PhotographicMedium> rdf:type owl:Class ;
+                                                                              rdfs:subClassOf <http://purl.org/spar/fabio/StorageMedium> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#PopularCamera
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#PopularCamera> rdf:type owl:Class ;
+                                                                         rdfs:subClassOf <http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Camera> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Portrait
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Portrait> rdf:type owl:Class ;
+                                                                    rdfs:subClassOf <http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Photo> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#SLR
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#SLR> rdf:type owl:Class ;
+                                                               rdfs:subClassOf <http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Camera> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#SeriesItem
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#SeriesItem> rdf:type owl:Class ;
+                                                                      rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#ShortSeries
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#ShortSeries> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf <http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#PhotoSeries> .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Subject
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Subject> rdf:type owl:Class ;
+                                                                   rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent> .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
