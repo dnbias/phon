@@ -1,0 +1,1870 @@
+@prefix : <http://www.semanticweb.org/dnbias/ontologies/2023/0/untitled-ontology-19#> .
+@prefix cc: <http://web.resource.org/cc/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix bag: <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix core: <http://purl.org/vocab/frbr/core#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix list: <http://www.ontologydesignpatterns.org/cp/owl/list.owl#> .
+@prefix lode: <http://linkedevents.org/ontology/> .
+@prefix obda: <https://w3id.org/obda/vocabulary#> .
+@prefix phon: <http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix swrla: <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix sequence: <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#> .
+@prefix photOntology: <http://www.semanticweb.org/dnbias/ontologies/2023/0/photOntology#> .
+@prefix collectionentity: <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#> .
+@prefix cpannotationschema: <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#> .
+@base <http://www.semanticweb.org/dnbias/ontologies/2023/0/phon> .
+
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon> rdf:type owl:Ontology ;
+                                                            owl:imports <http://www.ontologydesignpatterns.org/cp/owl/list.owl> ;
+                                                            dc:author "Daniel Biasiotto" ;
+                                                            dc:date "2023-02-05T00:00:00"^^xsd:dateTime ;
+                                                            dc:description "An ontology describing the photography domain."@en ;
+                                                            dc:title "PhotOntology"@en ;
+                                                            vann:preferredNamespacePrefix "phon" ;
+                                                            vann:preferredNamespaceUri "www.linkedweb.org/phon" ;
+                                                            rdfs:label "PhotOntology"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/author
+dc:author rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/date
+dc:date rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+dc:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
+
+
+###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+swrla:isRuleEnabled rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#maxQualifiedCardinality
+owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#minQualifiedCardinality
+owl:minQualifiedCardinality rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/spar/fabio/isStoredOn
+fabio:isStoredOn rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/spar/fabio/stores
+fabio:stores rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/vocab/frbr/core#partOf
+core:partOf rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#actsFor
+dul:actsFor rdf:type owl:ObjectProperty ;
+            rdfs:domain dul:Agent ,
+                        dul:Object ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty dul:hasLocation ;
+                          owl:someValuesFrom dul:Entity
+                        ] .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#actsThrough
+dul:actsThrough rdf:type owl:ObjectProperty ;
+                rdfs:range dul:Agent ,
+                           dul:Object ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty dul:hasLocation ;
+                             owl:someValuesFrom dul:Entity
+                           ] .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith
+dul:associatedWith rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#conceptualizes
+dul:conceptualizes rdf:type owl:ObjectProperty ;
+                   rdfs:domain dul:Agent ,
+                               dul:Object ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty dul:hasLocation ;
+                                 owl:someValuesFrom dul:Entity
+                               ] .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#expresses
+dul:expresses rdf:type owl:ObjectProperty ;
+              rdfs:domain dul:InformationEntity ,
+                          dul:InformationObject ,
+                          dul:SocialObject ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty dul:isExpressedBy ;
+                            owl:someValuesFrom dul:InformationObject
+                          ] .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#expressesConcept
+dul:expressesConcept rdf:type owl:ObjectProperty ;
+                     rdfs:domain dul:InformationEntity ,
+                                 dul:InformationObject ,
+                                 dul:SocialObject ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty dul:isExpressedBy ;
+                                   owl:someValuesFrom dul:InformationObject
+                                 ] .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasLocation
+dul:hasLocation rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf dul:associatedWith ;
+                owl:inverseOf dul:isLocationOf ;
+                rdfs:domain dul:Entity ;
+                rdfs:range dul:Entity ;
+                rdfs:comment """A generic, relative spatial location, holding between any entities. E.g. 'the cat is on the mat', 'Omar is in Samarcanda', 'the wound is close to the femural artery'.
+For 'absolute' locations, see SpaceRegion"""^^xsd:string ;
+                rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ;
+                rdfs:label "ha localizzazione"@it ,
+                           "has location"@en .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasMember
+dul:hasMember rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant
+dul:hasParticipant rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#includesAgent
+dul:includesAgent rdf:type owl:ObjectProperty ;
+                  rdfs:range dul:Agent .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#involvesAgent
+dul:involvesAgent rdf:type owl:ObjectProperty ;
+                  owl:inverseOf dul:isAgentInvolvedIn ;
+                  rdfs:range dul:Agent .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isAbout
+dul:isAbout rdf:type owl:ObjectProperty ;
+            rdfs:domain dul:InformationEntity ,
+                        dul:InformationObject ,
+                        dul:SocialObject ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty dul:isExpressedBy ;
+                          owl:someValuesFrom dul:InformationObject
+                        ] .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isAgentIncludedIn
+dul:isAgentIncludedIn rdf:type owl:ObjectProperty ;
+                      rdfs:domain dul:Agent ,
+                                  dul:Object ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty dul:hasLocation ;
+                                    owl:someValuesFrom dul:Entity
+                                  ] .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isAgentInvolvedIn
+dul:isAgentInvolvedIn rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf dul:isParticipantIn ;
+                      rdfs:domain dul:Agent ,
+                                  dul:Object ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty dul:hasLocation ;
+                                    owl:someValuesFrom dul:Entity
+                                  ] ;
+                      rdfs:range dul:Event ;
+                      rdfs:comment "Agent participation."^^xsd:string ;
+                      rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ;
+                      rdfs:label "is agent involved in"@en ,
+                                 "è un agente coinvolto in"@it .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isConceptExpressedBy
+dul:isConceptExpressedBy rdf:type owl:ObjectProperty ;
+                         rdfs:range dul:InformationEntity ,
+                                    dul:InformationObject ,
+                                    dul:SocialObject ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty dul:isExpressedBy ;
+                                      owl:someValuesFrom dul:InformationObject
+                                    ] .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isConceptualizedBy
+dul:isConceptualizedBy rdf:type owl:ObjectProperty ;
+                       rdfs:range dul:Agent ,
+                                  dul:Object ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty dul:hasLocation ;
+                                    owl:someValuesFrom dul:Entity
+                                  ] .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isExpressedBy
+dul:isExpressedBy rdf:type owl:ObjectProperty ;
+                  rdfs:range dul:InformationEntity ,
+                             dul:InformationObject ,
+                             dul:SocialObject ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty dul:isExpressedBy ;
+                               owl:someValuesFrom dul:InformationObject
+                             ] .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isLocationOf
+dul:isLocationOf rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf dul:associatedWith ;
+                 rdfs:domain dul:Entity ;
+                 rdfs:range dul:Entity ;
+                 rdfs:comment """A generic, relative localization, holding between any entities. E.g. 'Rome is the seat of the Pope', 'the liver is the location of the tumor'.
+For 'absolute' locations, see SpaceRegion"""^^xsd:string ;
+                 rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ;
+                 rdfs:label "is location of"@en ,
+                            "è una localizzazione di"@it .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isParticipantIn
+dul:isParticipantIn rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isRealizedBy
+dul:isRealizedBy rdf:type owl:ObjectProperty ;
+                 owl:inverseOf dul:realizes ;
+                 rdfs:domain dul:InformationEntity ,
+                             dul:InformationObject ,
+                             dul:SocialObject ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty dul:isExpressedBy ;
+                               owl:someValuesFrom dul:InformationObject
+                             ] .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isReferenceOf
+dul:isReferenceOf rdf:type owl:ObjectProperty ;
+                  rdfs:range dul:InformationEntity ,
+                             dul:InformationObject ,
+                             dul:SocialObject ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty dul:isExpressedBy ;
+                               owl:someValuesFrom dul:InformationObject
+                             ] .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#realizes
+dul:realizes rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf dul:associatedWith ;
+             rdfs:domain dul:InformationRealization ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty dul:realizes ;
+                           owl:someValuesFrom dul:InformationObject
+                         ] ;
+             rdfs:range dul:InformationEntity ,
+                        dul:InformationObject ,
+                        dul:SocialObject ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty dul:isExpressedBy ;
+                          owl:someValuesFrom dul:InformationObject
+                        ] ;
+             rdfs:comment "A relation between an information realization and an information object, e.g. the paper copy of the Italian Constitution realizes the text of the Constitution."^^xsd:string ;
+             rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ;
+             rdfs:label "realizes"@en ,
+                        "realizza"@it .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#realizesInformationAbout
+dul:realizesInformationAbout rdf:type owl:ObjectProperty ;
+                             owl:propertyChainAxiom ( dul:realizes
+                                                      dul:isAbout
+                                                    ) .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#author
+phon:author rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf dul:associatedWith ;
+            rdf:type owl:TransitiveProperty ;
+            rdfs:range phon:Author ;
+            owl:propertyChainAxiom ( phon:shot
+                                     photOntology:inSeries
+                                   ) ;
+            rdfs:label "has author"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#camera
+phon:camera rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf phon:shotWith ;
+            rdfs:domain phon:Photo ;
+            rdfs:range phon:Camera ;
+            rdfs:label "using camera"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#containedInItem
+phon:containedInItem rdf:type owl:ObjectProperty ;
+                     owl:inverseOf phon:containsPhoto .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#containsPhoto
+phon:containsPhoto rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf bag:itemContent ;
+                   rdfs:domain phon:SeriesItem ;
+                   rdfs:range phon:Photo ;
+                   rdfs:label "contains photo"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#genre
+phon:genre rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf dul:associatedWith ;
+           owl:inverseOf phon:isGenreOf ;
+           rdf:type owl:TransitiveProperty ;
+           rdfs:range collectionentity:Collection ,
+                      phon:Genre ;
+           owl:propertyChainAxiom ( photOntology:inSeries
+                                    phon:genre
+                                  ) ;
+           rdfs:label "has genre"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#hasPhoto
+phon:hasPhoto rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf bag:hasItem ;
+              owl:inverseOf photOntology:inSeries ;
+              rdfs:domain phon:PhotoSeries ;
+              rdfs:range phon:SeriesItem ;
+              rdfs:label "has photo"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#isGenreOf
+phon:isGenreOf rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf dul:associatedWith ;
+               rdfs:label "is genre of"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#isLocation
+phon:isLocation rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf dul:associatedWith ,
+                                   dul:isLocationOf ;
+                owl:inverseOf phon:location ;
+                rdfs:domain dul:Entity ;
+                rdfs:range dul:Entity ;
+                rdfs:label "is location of"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#isSubjectOf
+phon:isSubjectOf rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf dul:associatedWith ;
+                 owl:inverseOf phon:subject ;
+                 rdfs:label "is subject of"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#lens
+phon:lens rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf phon:shotWith ;
+          rdfs:domain phon:Photo ;
+          rdfs:range phon:Lens ;
+          rdfs:label "using lens"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#location
+phon:location rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf dul:associatedWith ,
+                                 dul:hasLocation ;
+              rdf:type owl:FunctionalProperty ;
+              rdfs:domain dul:Entity ;
+              rdfs:range dul:Entity ,
+                         dul:PhysicalObject ,
+                         dul:PhysicalPlace ,
+                         phon:Location ;
+              rdfs:label "has location"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#medium
+phon:medium rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf fabio:isStoredOn ,
+                               phon:shotWith ;
+            owl:inverseOf phon:storesPhoto ;
+            rdfs:domain phon:Photo ;
+            rdfs:range phon:PhotographicMedium ;
+            rdfs:label "shot on medium"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#nextInSeries
+phon:nextInSeries rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf list:nextItem ,
+                                     owl:differentFrom ;
+                  owl:inverseOf phon:previousInSeries ;
+                  rdf:type owl:FunctionalProperty ;
+                  rdfs:domain phon:SeriesItem ;
+                  rdfs:range phon:SeriesItem ;
+                  rdfs:label "next in series"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#previousInSeries
+phon:previousInSeries rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf list:previousItem ,
+                                         owl:differentFrom ;
+                      rdf:type owl:FunctionalProperty ;
+                      rdfs:domain phon:SeriesItem ;
+                      rdfs:range phon:SeriesItem ;
+                      rdfs:label "previous in series"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#shot
+phon:shot rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf dul:associatedWith ;
+          owl:inverseOf phon:shotBy ;
+          rdfs:domain phon:Author ;
+          rdfs:range phon:Photo ;
+          rdfs:label "has shot"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#shotBy
+phon:shotBy rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf phon:author ;
+            rdfs:domain phon:Photo ;
+            rdfs:range phon:Author ;
+            rdfs:label "was shot by"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#shotWith
+phon:shotWith rdf:type owl:ObjectProperty ;
+              owl:inverseOf phon:usedToShoot ;
+              rdfs:domain phon:Photo ;
+              rdfs:label "was shot with"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#storesPhoto
+phon:storesPhoto rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf fabio:stores ;
+                 rdfs:label "stores photo"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#subject
+phon:subject rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf dul:associatedWith ;
+             rdfs:domain phon:Photo ;
+             rdfs:range phon:Subject ;
+             rdfs:label "has subject"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#usedToShoot
+phon:usedToShoot rdf:type owl:ObjectProperty ;
+                 rdfs:label "used to shoot"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/photOntology#inSeries
+photOntology:inSeries rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf core:partOf ,
+                                         bag:itemOf ;
+                      rdfs:domain phon:SeriesItem ;
+                      rdfs:range phon:PhotoSeries ;
+                      owl:propertyChainAxiom ( sequence:precedes
+                                               photOntology:inSeries
+                                             ) ;
+                      rdfs:label "is in series"@en .
+
+
+###  http://www.w3.org/2002/07/owl#differentFrom
+owl:differentFrom rdf:type owl:ObjectProperty ,
+                           owl:SymmetricProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://purl.org/dc/terms/created
+terms:created rdf:type owl:DatatypeProperty .
+
+
+###  http://purl.org/dc/terms/title
+terms:title rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#date
+phon:date rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf terms:created ;
+          rdfs:domain fabio:StillImage ,
+                      dul:InformationEntity ,
+                      dul:InformationObject ,
+                      dul:SocialObject ,
+                      phon:Photo ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty dul:isExpressedBy ;
+                        owl:someValuesFrom dul:InformationObject
+                      ] ;
+          rdfs:range xsd:dateTime ;
+          rdfs:comment "Date of creation of a photo."@en ;
+          rdfs:label "has date"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#height
+phon:height rdf:type owl:DatatypeProperty ;
+            rdfs:domain fabio:StillImage ,
+                        dul:InformationEntity ,
+                        dul:InformationObject ,
+                        dul:SocialObject ,
+                        phon:Photo ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty dul:isExpressedBy ;
+                          owl:someValuesFrom dul:InformationObject
+                        ] ;
+            rdfs:range xsd:float ;
+            rdfs:comment "Height of a photo in cm."@en ;
+            rdfs:label "Height"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#name
+phon:name rdf:type owl:DatatypeProperty ;
+          owl:equivalentProperty phon:title ;
+          rdfs:subPropertyOf terms:title ,
+                             phon:title ;
+          rdfs:domain fabio:StillImage ,
+                      dul:InformationEntity ,
+                      dul:InformationObject ,
+                      dul:SocialObject ,
+                      phon:Photo ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty dul:isExpressedBy ;
+                        owl:someValuesFrom dul:InformationObject
+                      ] ;
+          rdfs:comment "Name of an agent or entity."@en ;
+          rdfs:label "has name"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#title
+phon:title rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf terms:title ,
+                              phon:name ;
+           rdfs:domain fabio:StillImage ,
+                       dul:InformationEntity ,
+                       dul:InformationObject ,
+                       dul:SocialObject ,
+                       phon:Photo ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty dul:isExpressedBy ;
+                         owl:someValuesFrom dul:InformationObject
+                       ] ;
+           rdfs:comment "Title of a photo."@en ;
+           rdfs:label "has title"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#width
+phon:width rdf:type owl:DatatypeProperty ;
+           rdfs:domain fabio:StillImage ,
+                       dul:InformationEntity ,
+                       dul:InformationObject ,
+                       dul:SocialObject ,
+                       phon:Photo ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty dul:isExpressedBy ;
+                         owl:someValuesFrom dul:InformationObject
+                       ] ;
+           rdfs:range xsd:float ;
+           rdfs:comment "Width of a photo in cm."@en ;
+           rdfs:label "Width"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#year
+phon:year rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf terms:created ;
+          rdfs:domain fabio:StillImage ,
+                      dul:InformationEntity ,
+                      dul:InformationObject ,
+                      dul:SocialObject ,
+                      phon:Photo ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty dul:isExpressedBy ;
+                        owl:someValuesFrom dul:InformationObject
+                      ] ;
+          rdfs:range xsd:positiveInteger ;
+          rdfs:comment "Year a photo was shot."@en ;
+          rdfs:label "year"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/spar/fabio/Series
+fabio:Series rdf:type owl:Class .
+
+
+###  http://purl.org/spar/fabio/StillImage
+fabio:StillImage rdf:type owl:Class .
+
+
+###  http://purl.org/spar/fabio/StorageMedium
+fabio:StorageMedium rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/list.owl#List
+list:List rdfs:subClassOf collectionentity:Collection .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem
+list:ListItem rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty bag:itemContent ;
+                                owl:cardinality "1"^^xsd:nonNegativeInteger
+                              ] .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Action
+dul:Action rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty dul:hasParticipant ;
+                             owl:someValuesFrom dul:Agent
+                           ] .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent
+dul:Agent rdf:type owl:Class ;
+          rdfs:subClassOf dul:Object ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty dul:hasLocation ;
+                            owl:someValuesFrom dul:Entity
+                          ] ;
+          rdfs:comment "Additional comment: a computational agent can be considered as a PhysicalAgent that realizes a certain class of algorithms (that can be considered as instances of InformationObject) that allow to obtain some behaviors that are considered typical of agents in general. For an ontology of computational objects based on DOLCE see e.g. http://www.loa-cnr.it/COS/COS.owl, and http://www.loa-cnr.it/KCO/KCO.owl."^^xsd:string ,
+                       "Any agentive Object , either physical (e.g. a whale, a robot, an oak), or social (e.g. a corporation, an institution, a community)."^^xsd:string ;
+          rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ;
+          rdfs:label "Agent"@en ,
+                     "Agente"@it .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Collective
+dul:Collective rdf:type owl:Class ;
+               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                 owl:onProperty dul:hasMember ;
+                                 owl:allValuesFrom dul:Agent
+                               ] .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#CollectiveAgent
+dul:CollectiveAgent rdf:type owl:Class ;
+                    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                      owl:onProperty dul:actsThrough ;
+                                      owl:someValuesFrom dul:Agent
+                                    ] .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept
+dul:Concept rdf:type owl:Class ;
+            owl:disjointWith dul:InformationObject .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description
+dul:Description rdf:type owl:Class ;
+                owl:disjointWith dul:InformationObject .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity
+dul:Entity rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event
+dul:Event rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationEntity
+dul:InformationEntity rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject
+dul:InformationObject rdf:type owl:Class ;
+                      rdfs:subClassOf dul:InformationEntity ,
+                                      dul:SocialObject ;
+                      owl:disjointWith dul:SocialAgent ;
+                      rdfs:comment "A piece of information, such as a musical composition, a text, a word, a picture, independently from how it is concretely realized."^^xsd:string ;
+                      rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ;
+                      rdfs:label "Information object"@en ,
+                                 "Oggetto informativo"@it .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationRealization
+dul:InformationRealization rdf:type owl:Class ;
+                           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                             owl:onProperty dul:realizes ;
+                                             owl:someValuesFrom dul:InformationObject
+                                           ] .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object
+dul:Object rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty dul:hasLocation ;
+                             owl:someValuesFrom dul:Entity
+                           ] .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Person
+dul:Person rdf:type owl:Class ;
+           rdfs:subClassOf dul:Agent .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalAgent
+dul:PhysicalAgent rdf:type owl:Class ;
+                  rdfs:subClassOf dul:Agent .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject
+dul:PhysicalObject rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalPlace
+dul:PhysicalPlace rdf:type owl:Class ;
+                  rdfs:subClassOf dul:PhysicalObject ;
+                  rdfs:comment "A physical object that is inherently located; for example, a water area."^^xsd:string ;
+                  rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ;
+                  rdfs:label "Luogo fisico"@it ,
+                             "Physical place"@en .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place
+dul:Place rdf:type owl:Class ;
+          owl:equivalentClass phon:Location ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty dul:isLocationOf ;
+                            owl:minCardinality "1"^^xsd:nonNegativeInteger
+                          ] .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialAgent
+dul:SocialAgent rdf:type owl:Class ;
+                rdfs:subClassOf dul:Agent .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObject
+dul:SocialObject rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#AnalogicPhoto
+phon:AnalogicPhoto rdf:type owl:Class ;
+                   owl:equivalentClass [ rdf:type owl:Restriction ;
+                                         owl:onProperty phon:medium ;
+                                         owl:someValuesFrom [ rdf:type owl:Class ;
+                                                              owl:oneOf ( photOntology:Film
+                                                                        )
+                                                            ]
+                                       ] ;
+                   rdfs:subClassOf phon:Photo ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty phon:medium ;
+                                     owl:someValuesFrom [ rdf:type owl:Class ;
+                                                          owl:oneOf ( photOntology:Film
+                                                                    )
+                                                        ]
+                                   ] ;
+                   owl:disjointWith phon:DigitalPhoto ;
+                   rdfs:comment "A photo shot on analogic medium."@en ;
+                   rdfs:label "Analogic Photo"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#AntiquePhoto
+phon:AntiquePhoto rdf:type owl:Class ;
+                  rdfs:subClassOf phon:Photo ;
+                  owl:disjointWith phon:ModernPhoto ;
+                  rdfs:comment "A photograph shot before 1930."@en ;
+                  rdfs:label "Antique Photo"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Author
+phon:Author rdf:type owl:Class ;
+            rdfs:subClassOf dul:Agent ;
+            rdfs:comment "The author of a photograph."@en ;
+            rdfs:label "Author"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Camera
+phon:Camera rdf:type owl:Class ;
+            rdfs:subClassOf phon:Gear ;
+            rdfs:comment "A camera model used to create photographs."@en ;
+            rdfs:label "Camera"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#City
+phon:City rdf:type owl:Class ;
+          rdfs:subClassOf phon:Location ;
+          rdfs:comment "A city."@en ;
+          rdfs:label "City"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#DSLR
+phon:DSLR rdf:type owl:Class ;
+          rdfs:subClassOf phon:DigitalCamera ;
+          rdfs:comment "A Digital SLR."@en ;
+          rdfs:label "DSLR"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#DigitalCamera
+phon:DigitalCamera rdf:type owl:Class ;
+                   rdfs:subClassOf phon:Camera ;
+                   rdfs:comment "A digital camera."@en ;
+                   rdfs:label "Digital Camera"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#DigitalPhoto
+phon:DigitalPhoto rdf:type owl:Class ;
+                  owl:equivalentClass [ rdf:type owl:Restriction ;
+                                        owl:onProperty phon:medium ;
+                                        owl:someValuesFrom [ rdf:type owl:Class ;
+                                                             owl:oneOf ( photOntology:Digital
+                                                                       )
+                                                           ]
+                                      ] ;
+                  rdfs:subClassOf phon:Photo ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty phon:medium ;
+                                    owl:someValuesFrom [ rdf:type owl:Class ;
+                                                         owl:oneOf ( photOntology:Digital
+                                                                   )
+                                                       ]
+                                  ] ;
+                  rdfs:comment "A photo shot using a digital device."@en ;
+                  rdfs:label "Digital Photo"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Gear
+phon:Gear rdf:type owl:Class ;
+          rdfs:comment "Gear used in the making of photographs."@en ;
+          rdfs:label "Gear"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Genre
+phon:Genre rdf:type owl:Class ;
+           rdfs:subClassOf collectionentity:Collection ;
+           rdfs:comment "The genre of a Photograph or a PhotoSeries."@en ;
+           rdfs:label "Genre"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#InstantCamera
+phon:InstantCamera rdf:type owl:Class ;
+                   rdfs:subClassOf phon:Camera ;
+                   rdfs:comment "An instant camera."@en ;
+                   rdfs:label "Instant Camera"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Lens
+phon:Lens rdf:type owl:Class ;
+          rdfs:subClassOf phon:Gear ;
+          rdfs:comment "A lens used with a camera body to make photographs."@en ;
+          rdfs:label "Lens"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Location
+phon:Location rdf:type owl:Class ;
+              rdfs:subClassOf dul:PhysicalPlace ;
+              rdfs:comment "The location where a photo what taken."@en ;
+              rdfs:label "Location"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#LongSeries
+phon:LongSeries rdf:type owl:Class ;
+                rdfs:subClassOf phon:PhotoSeries ;
+                owl:disjointWith phon:ShortSeries ;
+                rdfs:comment "A photographic series containing more than 3 photographs."@en ;
+                rdfs:label "Long Series"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Mirrorless
+phon:Mirrorless rdf:type owl:Class ;
+                rdfs:subClassOf phon:DigitalCamera ;
+                rdfs:comment "A mirrorless camera body."@en ;
+                rdfs:label "Mirrorless"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#ModernPhoto
+phon:ModernPhoto rdf:type owl:Class ;
+                 rdfs:subClassOf phon:Photo ;
+                 rdfs:comment "A photo shot after 1930."@en ;
+                 rdfs:label "Modern Photo"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Nation
+phon:Nation rdf:type owl:Class ;
+            rdfs:subClassOf phon:Location ;
+            rdfs:comment "A nation."@en ;
+            rdfs:label "Nation"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#PhoneCamera
+phon:PhoneCamera rdf:type owl:Class ;
+                 rdfs:subClassOf phon:DigitalCamera ;
+                 rdfs:comment "A phone camera."@en ;
+                 rdfs:label "Phone Camera"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Photo
+phon:Photo rdf:type owl:Class ;
+           rdfs:subClassOf fabio:StillImage ,
+                           dul:InformationObject ;
+           owl:disjointUnionOf ( phon:AnalogicPhoto
+                                 phon:DigitalPhoto
+                               ) ,
+                               ( phon:AntiquePhoto
+                                 phon:ModernPhoto
+                               ) ;
+           rdfs:label "Photo"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#PhotoSeries
+phon:PhotoSeries rdf:type owl:Class ;
+                 rdfs:subClassOf fabio:Series ,
+                                 list:List ;
+                 owl:disjointWith phon:SeriesItem ;
+                 owl:disjointUnionOf ( phon:LongSeries
+                                       phon:ShortSeries
+                                     ) ;
+                 rdfs:comment "A collection of photograph's list items."@en ;
+                 rdfs:label "Photo Series"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#PhotographicMedium
+phon:PhotographicMedium rdf:type owl:Class ;
+                        owl:equivalentClass [ rdf:type owl:Class ;
+                                              owl:oneOf ( photOntology:Digital
+                                                          photOntology:Film
+                                                        )
+                                            ] ;
+                        rdfs:subClassOf fabio:StorageMedium ,
+                                        [ rdf:type owl:Class ;
+                                          owl:oneOf ( photOntology:Digital
+                                                      photOntology:Film
+                                                    )
+                                        ] ;
+                        rdfs:comment "A medium that stores photographs."@en ;
+                        rdfs:label "Photographic Medium"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#PopularCamera
+phon:PopularCamera rdf:type owl:Class ;
+                   owl:equivalentClass [ rdf:type owl:Restriction ;
+                                         owl:onProperty phon:usedToShoot ;
+                                         owl:minQualifiedCardinality "4"^^xsd:nonNegativeInteger ;
+                                         owl:onClass phon:Photo
+                                       ] ;
+                   rdfs:subClassOf phon:Camera ;
+                   rdfs:comment "A camera body used to make many different photos."@en ;
+                   rdfs:label "Popolar Camera"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Portrait
+phon:Portrait rdf:type owl:Class ;
+              rdfs:subClassOf phon:Photo .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#SLR
+phon:SLR rdf:type owl:Class ;
+         rdfs:subClassOf phon:Camera ;
+         rdfs:comment "An analogic camera body."@en ;
+         rdfs:label "SLR"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#SeriesItem
+phon:SeriesItem rdf:type owl:Class ;
+                rdfs:subClassOf list:ListItem ;
+                rdfs:comment "An item in a photographic series."@en ;
+                rdfs:label "Series Item"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#ShortSeries
+phon:ShortSeries rdf:type owl:Class ;
+                 rdfs:subClassOf phon:PhotoSeries ;
+                 rdfs:comment "A photographic series containing less than 3 photos."@en ;
+                 rdfs:label "Short Series"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Subject
+phon:Subject rdf:type owl:Class ;
+             rdfs:subClassOf dul:Agent ;
+             rdfs:comment "The subject of a photograph."@en ;
+             rdfs:label "Subject"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://purl.org/spar/fabio/film
+fabio:film rdf:type owl:NamedIndividual ,
+                    fabio:StorageMedium ,
+                    phon:PhotographicMedium ,
+                    [ rdf:type owl:Class ;
+                      owl:oneOf ( photOntology:Digital
+                                  photOntology:Film
+                                )
+                    ] ,
+                    [ rdf:type owl:Class ;
+                      owl:oneOf ( photOntology:Film
+                                )
+                    ] ;
+           owl:sameAs phon:GelatinSilverPrint ,
+                      photOntology:Film ;
+           phon:storesPhoto phon:TheMigrantMother .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#AstroPhotography
+phon:AstroPhotography rdf:type owl:NamedIndividual ,
+                               collectionentity:Collection ,
+                               phon:Genre ;
+                      owl:sameAs phon:SpacePhotography ;
+                      rdfs:label "Astro-Photography"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#California
+phon:California rdf:type owl:NamedIndividual ,
+                         dul:Entity ,
+                         dul:PhysicalObject ,
+                         dul:PhysicalPlace ,
+                         phon:Location ;
+                dul:associatedWith phon:TheMigrantMother ;
+                dul:isLocationOf phon:TheMigrantMother ;
+                phon:isLocation phon:TheMigrantMother ;
+                rdfs:comment "A state of the USA."@en ;
+                rdfs:label "California"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#DorotheaLange
+phon:DorotheaLange rdf:type owl:NamedIndividual ,
+                            phon:Author ;
+                   dul:associatedWith phon:TheMigrantMother ;
+                   phon:shot phon:TheMigrantMother ;
+                   terms:title "Dorothea Lange" ;
+                   phon:name "Dorothea Lange" ;
+                   phon:title "Dorothea Lange" ;
+                   rdfs:comment "American photographer, author of Migrant Mother."@en ;
+                   rdfs:label "Dorothea Lange"@en ;
+                   rdfs:seeAlso "https://en.wikipedia.org/wiki/Dorothea_Lange"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Earth
+phon:Earth rdf:type owl:NamedIndividual ,
+                    dul:Agent ,
+                    phon:Subject ;
+           dul:associatedWith phon:PaleBlueDot ;
+           phon:isSubjectOf phon:PaleBlueDot ;
+           rdfs:comment "Planet Earth."@en ;
+           rdfs:label "Earth"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#FamilyPortrait
+phon:FamilyPortrait rdf:type owl:NamedIndividual ,
+                             phon:PhotoSeries ;
+                    phon:author phon:NASA ,
+                                phon:Voyager1 ;
+                    phon:genre phon:SpacePhotography ;
+                    rdfs:comment "Photograph taken by NASA in 1990 of the Solar System."@en ;
+                    rdfs:isDefinedBy "https://solarsystem.nasa.gov/resources/700/first-ever-solar-system-family-portrait-1990/"@en ;
+                    rdfs:label "Family Portrait"@en ;
+                    rdfs:seeAlso "https://en.wikipedia.org/wiki/Family_Portrait_(Voyager)"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#FlorenceOwensThompson
+phon:FlorenceOwensThompson rdf:type owl:NamedIndividual ,
+                                    dul:Agent ,
+                                    dul:Person ;
+                           dul:associatedWith phon:TheMigrantMother ;
+                           phon:isSubjectOf phon:TheMigrantMother ;
+                           rdfs:comment "Subject of the photograph \"The Migrant Mother\" shot in 1936."@en ;
+                           rdfs:label "Florence Owens Thompson"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#GelatinSilverPrint
+phon:GelatinSilverPrint rdf:type owl:NamedIndividual ,
+                                 phon:PhotographicMedium ;
+                        owl:sameAs photOntology:Film ;
+                        fabio:stores phon:TheMigrantMother ;
+                        phon:storesPhoto phon:TheMigrantMother ;
+                        rdfs:comment "A particular photographic medium."@en ;
+                        rdfs:label "Gelatin Silver Print"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Glamour
+phon:Glamour rdf:type owl:NamedIndividual ,
+                      collectionentity:Collection ,
+                      phon:Genre ;
+             rdfs:comment "A genre of photography."@en ;
+             rdfs:label "Glamour"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#ISS
+phon:ISS rdf:type owl:NamedIndividual ,
+                  phon:Camera ,
+                  phon:Gear ;
+         rdfs:label "ISS"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Italy
+phon:Italy rdf:type owl:NamedIndividual ;
+           rdfs:label "Italy"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Jupiter
+phon:Jupiter rdf:type owl:NamedIndividual ;
+             phon:camera phon:ISS ;
+             rdfs:label "Jupiter"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Landscape
+phon:Landscape rdf:type owl:NamedIndividual ,
+                        collectionentity:Collection ,
+                        phon:Genre ;
+               rdfs:comment "A genre of photography."@en ;
+               rdfs:label "Landscape"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#NASA
+phon:NASA rdf:type owl:NamedIndividual ;
+          dul:associatedWith phon:Jupiter ,
+                             phon:PaleBlueDot ;
+          phon:shot phon:Jupiter ,
+                    phon:PaleBlueDot ;
+          rdfs:label "NASA"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#NamelessFamily
+phon:NamelessFamily rdf:type owl:NamedIndividual ;
+                    dul:associatedWith phon:TheMigrantMother ;
+                    phon:isSubjectOf phon:TheMigrantMother ;
+                    rdfs:label "Nameless Family"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Neptune
+phon:Neptune rdf:type owl:NamedIndividual ;
+             phon:camera phon:ISS ;
+             rdfs:label "Neptune"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#PaleBlueDot
+phon:PaleBlueDot rdf:type owl:NamedIndividual ;
+                 fabio:isStoredOn photOntology:Digital ;
+                 dul:hasLocation phon:SolarSystem ;
+                 phon:camera phon:ISS ;
+                 phon:lens <http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#1500mm-NA> ,
+                           <http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#200mm-WA> ;
+                 phon:medium photOntology:Digital ;
+                 phon:shotBy phon:NASA ,
+                             phon:Voyager1 ;
+                 phon:shotWith phon:ISS ,
+                               photOntology:Digital ;
+                 phon:subject phon:Earth ;
+                 terms:created "1990-02-14T00:00:00"^^xsd:dateTime ;
+                 phon:date "1990-02-14T00:00:00"^^xsd:dateTime ;
+                 phon:year "1990"^^xsd:positiveInteger ;
+                 rdfs:comment "Famous photograph of the Earth taken by Voyager 1."@en ;
+                 rdfs:isDefinedBy "https://en.wikipedia.org/wiki/Pale_Blue_Dot"@en ;
+                 rdfs:label "Pale Blue Dot"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Portrait
+phon:Portrait rdf:type owl:NamedIndividual ,
+                       collectionentity:Collection ,
+                       phon:Genre .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Rome
+phon:Rome rdf:type owl:NamedIndividual ;
+          rdfs:comment "The capital city of Italy."@en ;
+          rdfs:label "Rome"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Saturn
+phon:Saturn rdf:type owl:NamedIndividual ;
+            phon:camera phon:ISS ;
+            rdfs:label "Saturn"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#SolarSystem
+phon:SolarSystem rdf:type owl:NamedIndividual ,
+                          dul:Entity ,
+                          dul:PhysicalObject ,
+                          dul:PhysicalPlace ,
+                          phon:Location ;
+                 dul:associatedWith phon:PaleBlueDot ;
+                 dul:isLocationOf phon:PaleBlueDot ;
+                 phon:isLocation phon:PaleBlueDot ;
+                 rdfs:label "Solar System"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#SpacePhotography
+phon:SpacePhotography rdf:type owl:NamedIndividual ,
+                               collectionentity:Collection ,
+                               phon:Genre ;
+                      rdfs:comment "A genre of photography."@en ;
+                      rdfs:label "Space Photography"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#TheMigrantMother
+phon:TheMigrantMother rdf:type owl:NamedIndividual ,
+                               fabio:StillImage ,
+                               dul:Entity ,
+                               dul:InformationEntity ,
+                               dul:InformationObject ,
+                               dul:SocialObject ,
+                               phon:AnalogicPhoto ,
+                               phon:Photo ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty dul:hasLocation ;
+                                 owl:someValuesFrom dul:Entity
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty dul:isExpressedBy ;
+                                 owl:someValuesFrom dul:InformationObject
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty phon:medium ;
+                                 owl:someValuesFrom [ rdf:type owl:Class ;
+                                                      owl:oneOf ( photOntology:Film
+                                                                )
+                                                    ]
+                               ] ;
+                      fabio:isStoredOn fabio:film ,
+                                       phon:GelatinSilverPrint ,
+                                       photOntology:Film ;
+                      dul:associatedWith phon:California ,
+                                         phon:FlorenceOwensThompson ,
+                                         phon:NamelessFamily ,
+                                         phon:Portrait ;
+                      dul:hasLocation phon:California ;
+                      phon:camera <http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#4x5Graflex> ;
+                      phon:genre phon:Portrait ;
+                      phon:location phon:California ;
+                      phon:medium fabio:film ,
+                                  phon:GelatinSilverPrint ,
+                                  photOntology:Film ;
+                      phon:shotBy phon:DorotheaLange ;
+                      phon:shotWith fabio:film ,
+                                    phon:GelatinSilverPrint ,
+                                    <http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#4x5Graflex> ,
+                                    photOntology:Film ;
+                      phon:subject phon:FlorenceOwensThompson ,
+                                   phon:NamelessFamily ;
+                      terms:created "1936"^^xsd:positiveInteger ,
+                                    "1936-03-01T00:00:00"^^xsd:dateTime ;
+                      phon:date "1936-03-01T00:00:00"^^xsd:dateTime ;
+                      phon:height "28.3"^^xsd:float ;
+                      phon:name "Madre Migrante" ;
+                      phon:title "Madre Migrante"@it ,
+                                 "Migrant Mother"@en ;
+                      phon:width "21.8"^^xsd:float ;
+                      phon:year "1936"^^xsd:positiveInteger ;
+                      rdfs:isDefinedBy "https://en.wikipedia.org/wiki/Migrant_Mother"@en ;
+                      rdfs:label "Madre Migrante"@it ,
+                                 "The Migrant Mother"@en ;
+                      rdfs:seeAlso "https://www.moma.org/collection/works/50989"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Uranus
+phon:Uranus rdf:type owl:NamedIndividual ;
+            phon:camera phon:ISS ;
+            rdfs:label "Uranus"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Venus
+phon:Venus rdf:type owl:NamedIndividual ;
+           phon:camera phon:ISS ;
+           rdfs:label "Venus"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#Voyager1
+phon:Voyager1 rdf:type owl:NamedIndividual ,
+                       dul:Agent ,
+                       dul:Object ,
+                       phon:Author ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty dul:hasLocation ;
+                         owl:someValuesFrom dul:Entity
+                       ] ;
+              dul:associatedWith phon:PaleBlueDot ;
+              phon:shot phon:PaleBlueDot ;
+              rdfs:comment "A mission by NASA."@en ;
+              rdfs:label "Voyager 1"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#fp1
+phon:fp1 rdf:type owl:NamedIndividual ;
+         list:firstItemOf phon:FamilyPortrait ;
+         phon:containsPhoto phon:Jupiter ;
+         phon:nextInSeries phon:fp2 ;
+         photOntology:inSeries phon:FamilyPortrait ;
+         rdfs:comment "Item 1 of Family Portrait."@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#fp2
+phon:fp2 rdf:type owl:NamedIndividual ;
+         phon:containsPhoto phon:PaleBlueDot ;
+         phon:nextInSeries phon:fp3 ;
+         rdfs:comment "Item 2 of Family Portrait."@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#fp3
+phon:fp3 rdf:type owl:NamedIndividual ;
+         phon:containsPhoto phon:Venus ;
+         phon:nextInSeries phon:fp4 ;
+         rdfs:comment "Item 3 of Family Portrait."@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#fp4
+phon:fp4 rdf:type owl:NamedIndividual ;
+         phon:containsPhoto phon:Saturn ;
+         phon:nextInSeries phon:fp5 ;
+         rdfs:comment "Item 4 of Family Portrait."@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#fp5
+phon:fp5 rdf:type owl:NamedIndividual ;
+         phon:containsPhoto phon:Uranus ;
+         phon:nextInSeries phon:fp6 ;
+         rdfs:comment "Item 5 of Family Portrait."@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#fp6
+phon:fp6 rdf:type owl:NamedIndividual ;
+         list:lastItemOf phon:FamilyPortrait ;
+         phon:containsPhoto phon:Neptune ;
+         rdfs:comment "Item 6 of Family Portrait."@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#1500mm-NA
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#1500mm-NA> rdf:type owl:NamedIndividual ;
+                                                                     rdfs:label "1500mm NA"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#200mm-WA
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#200mm-WA> rdf:type owl:NamedIndividual ;
+                                                                    rdfs:label "200mm WA"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#4x5Graflex
+<http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#4x5Graflex> rdf:type owl:NamedIndividual ,
+                                                                               phon:Camera ,
+                                                                               phon:Gear ;
+                                                                      rdfs:label "4x5 Graflex"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/photOntology#Digital
+photOntology:Digital rdf:type owl:NamedIndividual ,
+                              fabio:StorageMedium ,
+                              phon:PhotographicMedium ,
+                              [ rdf:type owl:Class ;
+                                owl:oneOf ( photOntology:Digital
+                                          )
+                              ] ;
+                     phon:storesPhoto phon:PaleBlueDot ;
+                     rdfs:label "Digital"@en .
+
+
+###  http://www.semanticweb.org/dnbias/ontologies/2023/0/photOntology#Film
+photOntology:Film rdf:type owl:NamedIndividual ,
+                           fabio:StorageMedium ,
+                           phon:PhotographicMedium ,
+                           [ rdf:type owl:Class ;
+                             owl:oneOf ( photOntology:Digital
+                                         photOntology:Film
+                                       )
+                           ] ,
+                           [ rdf:type owl:Class ;
+                             owl:oneOf ( photOntology:Film
+                                       )
+                           ] ;
+                  phon:storesPhoto phon:TheMigrantMother ;
+                  rdfs:comment "The medium used in analogic photographs."@en ;
+                  rdfs:label "Film"@en .
+
+
+[ owl:minQualifiedCardinality "5"^^xsd:nonNegativeInteger
+] .
+
+[ owl:maxQualifiedCardinality "3"^^xsd:nonNegativeInteger
+ ] .
+
+#################################################################
+#    Annotations
+#################################################################
+
+phon:Portrait rdfs:label "Portrait"@en ;
+               rdfs:comment "A photography genre."@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:Class ;
+  owl:oneOf ( photOntology:Digital
+              photOntology:Film
+            ) ;
+  rdfs:subClassOf fabio:StorageMedium
+] .
+
+
+[ rdf:type owl:Class ;
+  owl:oneOf ( photOntology:Digital
+              photOntology:Film
+            ) ;
+  rdfs:subClassOf phon:PhotographicMedium
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty phon:medium ;
+  owl:someValuesFrom [ rdf:type owl:Class ;
+                       owl:oneOf ( photOntology:Digital
+                                 )
+                     ] ;
+  rdfs:subClassOf dul:SocialObject
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty phon:medium ;
+  owl:someValuesFrom [ rdf:type owl:Class ;
+                       owl:oneOf ( photOntology:Digital
+                                 )
+                     ] ;
+  rdfs:subClassOf phon:DigitalPhoto
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty phon:medium ;
+  owl:someValuesFrom [ rdf:type owl:Class ;
+                       owl:oneOf ( photOntology:Digital
+                                 )
+                     ] ;
+  rdfs:subClassOf phon:Photo
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty phon:medium ;
+  owl:someValuesFrom [ rdf:type owl:Class ;
+                       owl:oneOf ( photOntology:Digital
+                                 )
+                     ] ;
+  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                    owl:onProperty dul:isExpressedBy ;
+                    owl:someValuesFrom dul:InformationObject
+                  ]
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty phon:medium ;
+  owl:someValuesFrom [ rdf:type owl:Class ;
+                       owl:oneOf ( photOntology:Film
+                                 )
+                     ] ;
+  rdfs:subClassOf phon:AnalogicPhoto
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty phon:medium ;
+  owl:someValuesFrom [ rdf:type owl:Class ;
+                       owl:oneOf ( photOntology:Film
+                                 )
+                     ] ;
+  rdfs:subClassOf phon:Photo
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( phon:ISS
+                        <http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#4x5Graflex>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( phon:Jupiter
+                        phon:Neptune
+                        phon:PaleBlueDot
+                        phon:Saturn
+                        phon:TheMigrantMother
+                        phon:Uranus
+                        phon:Venus
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( phon:PaleBlueDot
+                        phon:Saturn
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( phon:PaleBlueDot
+                        phon:TheMigrantMother
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( phon:Saturn
+                        phon:TheMigrantMother
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( phon:fp1
+                        phon:fp2
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( phon:fp1
+                        phon:fp2
+                        phon:fp3
+                        phon:fp4
+                        phon:fp5
+                        phon:fp6
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( phon:fp1
+                        phon:fp3
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( phon:fp1
+                        phon:fp4
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( phon:fp1
+                        phon:fp5
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( phon:fp1
+                        phon:fp6
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#1500mm-NA>
+                        <http://www.semanticweb.org/dnbias/ontologies/2023/0/phon#200mm-WA>
+                      )
+] .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+:x rdf:type swrl:Variable .
+
+:y rdf:type swrl:Variable .
+
+:l rdf:type swrl:Variable .
+
+:s rdf:type swrl:Variable .
+
+:p rdf:type swrl:Variable .
+
+:p1 rdf:type swrl:Variable .
+
+:p2 rdf:type swrl:Variable .
+
+:p3 rdf:type swrl:Variable .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "A rule defining a portrait"^^xsd:string ;
+   rdfs:label "Portrait"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate phon:Photo ;
+                           swrl:argument1 :x
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate phon:subject ;
+                                      swrl:argument1 :x ;
+                                      swrl:argument2 :y
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:ClassAtom ;
+                                                 swrl:classPredicate dul:Person ;
+                                                 swrl:argument1 :y
+                                               ] ;
+                                     rdf:rest rdf:nil
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate phon:Portrait ;
+                           swrl:argument1 :x
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "A rule defining the subject location as the location of the photo depicting them"^^xsd:string ;
+   rdfs:label "SubjectLocation"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate phon:Photo ;
+                           swrl:argument1 :x
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate phon:location ;
+                                      swrl:argument1 :x ;
+                                      swrl:argument2 :l
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                 swrl:propertyPredicate phon:subject ;
+                                                 swrl:argument1 :x ;
+                                                 swrl:argument2 :y
+                                               ] ;
+                                     rdf:rest rdf:nil
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate phon:location ;
+                           swrl:argument1 :y ;
+                           swrl:argument2 :l
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "A rule defining a modern photograph"^^xsd:string ;
+   rdfs:label "ModernPhoto"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate phon:Photo ;
+                           swrl:argument1 :x
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                      swrl:propertyPredicate phon:year ;
+                                      swrl:argument1 :x ;
+                                      swrl:argument2 :y
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:BuiltinAtom ;
+                                                 swrl:builtin swrlb:greaterThanOrEqual ;
+                                                 swrl:arguments [ rdf:type rdf:List ;
+                                                                  rdf:first :y ;
+                                                                  rdf:rest [ rdf:type rdf:List ;
+                                                                             rdf:first "1930"^^xsd:positiveInteger ;
+                                                                             rdf:rest rdf:nil
+                                                                           ]
+                                                                ]
+                                               ] ;
+                                     rdf:rest rdf:nil
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate phon:ModernPhoto ;
+                           swrl:argument1 :x
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "A rule defining an antique photograph"^^xsd:string ;
+   rdfs:label "AntiquePhoto"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate phon:Photo ;
+                           swrl:argument1 :x
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                      swrl:propertyPredicate phon:year ;
+                                      swrl:argument1 :x ;
+                                      swrl:argument2 :y
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:BuiltinAtom ;
+                                                 swrl:builtin swrlb:lessThan ;
+                                                 swrl:arguments [ rdf:type rdf:List ;
+                                                                  rdf:first :y ;
+                                                                  rdf:rest [ rdf:type rdf:List ;
+                                                                             rdf:first "1930"^^xsd:positiveInteger ;
+                                                                             rdf:rest rdf:nil
+                                                                           ]
+                                                                ]
+                                               ] ;
+                                     rdf:rest rdf:nil
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate phon:AntiquePhoto ;
+                           swrl:argument1 :x
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "A rule defining the year of an item as the year of the series"^^xsd:string ;
+   rdfs:label "YearInItem"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate phon:PhotoSeries ;
+                           swrl:argument1 :s
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                      swrl:propertyPredicate phon:year ;
+                                      swrl:argument1 :s ;
+                                      swrl:argument2 :y
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                 swrl:propertyPredicate phon:hasPhoto ;
+                                                 swrl:argument1 :s ;
+                                                 swrl:argument2 :p
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                            swrl:propertyPredicate phon:containsPhoto ;
+                                                            swrl:argument1 :p ;
+                                                            swrl:argument2 :x
+                                                          ] ;
+                                                rdf:rest rdf:nil
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                           swrl:propertyPredicate phon:year ;
+                           swrl:argument1 :x ;
+                           swrl:argument2 :y
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "A long photo series"^^xsd:string ;
+   rdfs:label "LongSeries"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate phon:PhotoSeries ;
+                           swrl:argument1 :x
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate phon:hasPhoto ;
+                                      swrl:argument1 :x ;
+                                      swrl:argument2 :p1
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                 swrl:propertyPredicate phon:hasPhoto ;
+                                                 swrl:argument1 :x ;
+                                                 swrl:argument2 :p2
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                            swrl:propertyPredicate phon:hasPhoto ;
+                                                            swrl:argument1 :x ;
+                                                            swrl:argument2 :p3
+                                                          ] ;
+                                                rdf:rest [ rdf:type swrl:AtomList ;
+                                                           rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                       swrl:propertyPredicate owl:differentFrom ;
+                                                                       swrl:argument1 :p1 ;
+                                                                       swrl:argument2 :p2
+                                                                     ] ;
+                                                           rdf:rest [ rdf:type swrl:AtomList ;
+                                                                      rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                  swrl:propertyPredicate owl:differentFrom ;
+                                                                                  swrl:argument1 :p2 ;
+                                                                                  swrl:argument2 :p3
+                                                                                ] ;
+                                                                      rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                 rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                             swrl:propertyPredicate owl:differentFrom ;
+                                                                                             swrl:argument1 :p1 ;
+                                                                                             swrl:argument2 :p3
+                                                                                           ] ;
+                                                                                 rdf:rest rdf:nil
+                                                                               ]
+                                                                    ]
+                                                         ]
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate phon:LongSeries ;
+                           swrl:argument1 :x
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
