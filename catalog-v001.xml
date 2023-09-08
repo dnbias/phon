@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1694215628560" name="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl" uri="DUL.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1694215628560" name="duplicate:http://www.semanticweb.org/dnbias/ontologies/2023/0/untitled-ontology-19" uri="phon.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1694215628560" name="duplicate:http://www.semanticweb.org/dnbias/ontologies/2023/0/untitled-ontology-19" uri="phon.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1694216587768" name="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl" uri="DUL.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1694216587768" name="http://www.semanticweb.org/dnbias/ontologies/2023/0/untitled-ontology-19" uri="phon.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1694216587768" name="http://www.semanticweb.org/dnbias/ontologies/2023/8/phon-inferred-2" uri="phon-inferred.owl"/>
     </group>
 </catalog>
